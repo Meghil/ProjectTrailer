@@ -9,6 +9,7 @@ public class StartFilm : MonoBehaviour
     public Text buttonUI;
     public Text videoTimeUI;
     public Text successBetweenUI;
+    public GameObject secondCamera;
 
     private VideoPlayer wallVideo;
 
@@ -59,6 +60,7 @@ public class StartFilm : MonoBehaviour
     {
         if (!wallVideo.isPlaying)
         {
+            secondCamera.SetActive(true);
             wallVideo.Play();
         }
     }
