@@ -19,18 +19,27 @@ public class MC_Base_Movement : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate ()
     {
+        Move();
+
+        Jump(); 
+    }
+
+    void Move()
+    {
         float xMove = Input.GetAxis("Horizontal");
-        
+
         movement = new Vector3(xMove, 0, 0);
 
         transform.position += movement * Velocity * Time.deltaTime;
-       
+    }
+
+    void Jump()
+    {
         if ((Input.GetKey(KeyCode.Space) || Input.GetButton("Jump")) && isGrounded)
         {
             body.AddForce(Vector2.up * JumpPower);
             isGrounded = false;
         }
-        Debug.Log(isGrounded);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

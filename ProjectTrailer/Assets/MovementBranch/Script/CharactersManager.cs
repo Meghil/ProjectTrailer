@@ -28,11 +28,18 @@ public class CharactersManager : MonoBehaviour {
     {
         currentPosition = Characters[playerSelected].transform.position;
 
-        if(Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Switch+1"))
+        SwitchCaracter();
+
+		
+	}
+
+    void SwitchCaracter()
+    {
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Switch+1"))
         {
             Characters[playerSelected].SetActive(false);
             playerSelected += 1;
-            if(playerSelected > Characters.Count-1)
+            if (playerSelected > Characters.Count - 1)
             {
                 playerSelected = 0;
             }
@@ -41,6 +48,17 @@ public class CharactersManager : MonoBehaviour {
 
         }
 
-		
-	}
+        if (Input.GetKeyDown(KeyCode.Q) || Input.GetButtonDown("Switch-1"))
+        {
+            Characters[playerSelected].SetActive(false);
+            playerSelected -= 1;
+            if (playerSelected < 0)
+            {
+                playerSelected = Characters.Count - 1;
+            }
+            Characters[playerSelected].SetActive(true);
+            Characters[playerSelected].transform.position = currentPosition;
+
+        }
+    }
 }

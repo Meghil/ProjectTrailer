@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MC_BaseAction : MonoBehaviour
 {
-
 	// Use this for initialization
 	void Start ()
     {
