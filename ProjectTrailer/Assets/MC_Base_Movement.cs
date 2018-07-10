@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class MC_Base_Movement : MonoBehaviour
 {
-    public Vector3 Velocity;
+    public float Velocity;
     public float JumpPower;
     private Rigidbody2D body;
     private bool isGrounded;
+    private Vector3 movement;
 
 	// Use this for initialization
 	void Start ()
@@ -16,22 +17,20 @@ public class MC_Base_Movement : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	void FixedUpdate ()
     {
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.position += Velocity * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.position -= Velocity * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.Space) && isGrounded)
+        float xMove = Input.GetAxis("Horizontal");
+        
+        movement = new Vector3(xMove, 0, 0);
+
+        transform.position += movement * Velocity * Time.deltaTime;
+       
+        if ((Input.GetKey(KeyCode.Space) || Input.GetButton("Jump")) && isGrounded)
         {
             body.AddForce(Vector2.up * JumpPower);
             isGrounded = false;
         }
-
+        Debug.Log(isGrounded);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -39,12 +38,6 @@ public class MC_Base_Movement : MonoBehaviour
         if(collision.gameObject.tag == "Terrain")
         {
             isGrounded = true;
-            Debug.Log(isGrounded);
-        }
-        else
-        {
-            isGrounded = false;
-            Debug.Log(isGrounded);
         }
     }
 
