@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class StartFilm : MonoBehaviour
 {
     public Text buttonUI;
+    public Text videoTimeUI;
+    public Text successBetweenUI;
 
     private VideoPlayer wallVideo;
 
@@ -40,10 +42,24 @@ public class StartFilm : MonoBehaviour
             Debug.Log("J - Pressed!");
             buttonUI.text = "J";
         }
+
+        if (wallVideo.isPlaying)
+        {
+            videoTimeUI.text = wallVideo.time.ToString();
+
+            if ((wallVideo.time > 5f && wallVideo.time < 6f) && Input.GetKey(KeyCode.Q))
+            {
+                Debug.Log("Pressed Q between 5 and 6");
+                successBetweenUI.text = "Pressed Q between 5 and 6";
+            }
+        }
     }
 
     void OnTriggerEnter(Collider other)
     {
-        wallVideo.Play();
+        if (!wallVideo.isPlaying)
+        {
+            wallVideo.Play();
+        }
     }
 }
