@@ -19,6 +19,8 @@ public class StartFilm : MonoBehaviour
 
     private VideoPlayer wallVideo;
     private float progressBarCurrentValue;
+    private float timerHoldDownButton;
+    private int counterHoldDownButton;
 
 
     // Use this for initialization
@@ -27,6 +29,8 @@ public class StartFilm : MonoBehaviour
         wallVideo = GetComponent<VideoPlayer>();
         progressBarCurrentValue = progressBarMaxValue;
         progressBar.value = CalculateProgress();
+        timerHoldDownButton = 0f;
+        counterHoldDownButton = 0;
     }
 
     // Update is called once per frame
@@ -38,7 +42,7 @@ public class StartFilm : MonoBehaviour
 
             PressButtonInTime(1f, 2f, KeyCode.Y, pressYUI);
             PressButtonInTime(3f, 4f, KeyCode.X, pressXUI);
-            PressButtonInTime(5f, 6f, KeyCode.B, pressBUI);
+            HoldDownButtonInTime(5f, 10f, KeyCode.B, pressBUI);
         }
 
         progressBar.value = Mathf.Lerp(progressBar.value, CalculateProgress(), Time.deltaTime * progessBarSpeed);
@@ -63,6 +67,29 @@ public class StartFilm : MonoBehaviour
                 buttonUI.text = pressedButton.ToString();
                 Debug.Log(string.Format("Pressed {0} between {1} and {2}", pressedButton, timeA, timeB));
                 successBetweenUI.text = string.Format("Pressed {0} between {1} and {2}", pressedButton, timeA, timeB);
+                progressBarCurrentValue -= 1;
+            }
+        }
+        else
+        {
+            buttonImage.SetActive(false);
+        }
+    }
+
+    void HoldDownButtonInTime(float timeA, float timeB, KeyCode pressedButton, GameObject buttonImage)
+    {
+        if (wallVideo.time > timeA && wallVideo.time < timeB)
+        {
+            buttonImage.SetActive(true);
+            if (Input.GetKey(pressedButton))
+            {
+                if (Input.GetKeyUp(pressedButton))
+                    return;
+                timerHoldDownButton += Time.deltaTime;
+                counterHoldDownButton = (int)(timerHoldDownButton % 60);
+                buttonUI.text = pressedButton.ToString();
+                Debug.Log(string.Format("Pressed {0} between {1} and {2} - {3}", pressedButton, timeA, timeB, counterHoldDownButton));
+                successBetweenUI.text = string.Format("Pressed {0} between {1} and {2} - {3}", pressedButton, timeA, timeB, counterHoldDownButton);
                 progressBarCurrentValue -= 1;
             }
         }
