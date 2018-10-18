@@ -1,0 +1,319 @@
+fileFormatVersion: 2
+guid: e76c47d34b28ecd4d82c2923edf5b953
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: MH_append
+    100004: MH_Basement_append
+    100006: MH_Basement_square
+    100008: MH_Basement_terrace
+    100010: MH_Chimney
+    100012: MH_Door001
+    100014: MH_Door002
+    100016: MH_Fixtures
+    100018: MH_Roof_append
+    100020: MH_Roof_terrace
+    100022: MH_Roof_top
+    100024: MH_Roof_top 1
+    100026: MH_squarehouse
+    100028: MH_terrace
+    100030: MH_terrainstone
+    100032: MH_topsquare
+    100034: MH_topsquare1
+    100036: MH_Wall_append
+    100038: MH_Wall_square
+    100040: MH_Wall_square1
+    100042: MH_Wall_top
+    100044: MH_Wall_top 1
+    100046: MH_Window001
+    100048: MH_Window003
+    100050: MH_Window004
+    100052: MH_Window005
+    100054: MH_Window2002
+    100056: MH_Woodstructure
+    100058: MH_Woodstructure_append
+    100060: MH_Woodstructure_square
+    100062: MH_Woodstructure_terrace
+    100064: MH_Woodstructure_top
+    100066: MH_Woodstructure_top 1
+    100068: polySurface1
+    100070: polySurface10
+    100072: polySurface11
+    100074: polySurface12
+    100076: polySurface13
+    100078: polySurface14
+    100080: polySurface15
+    100082: polySurface16
+    100084: polySurface17
+    100086: polySurface18
+    100088: polySurface19
+    100090: polySurface2
+    100092: polySurface3
+    100094: polySurface5
+    100096: polySurface6
+    100098: polySurface7
+    100100: polySurface8
+    100102: polySurface9
+    400000: //RootNode
+    400002: MH_append
+    400004: MH_Basement_append
+    400006: MH_Basement_square
+    400008: MH_Basement_terrace
+    400010: MH_Chimney
+    400012: MH_Door001
+    400014: MH_Door002
+    400016: MH_Fixtures
+    400018: MH_Roof_append
+    400020: MH_Roof_terrace
+    400022: MH_Roof_top
+    400024: MH_Roof_top 1
+    400026: MH_squarehouse
+    400028: MH_terrace
+    400030: MH_terrainstone
+    400032: MH_topsquare
+    400034: MH_topsquare1
+    400036: MH_Wall_append
+    400038: MH_Wall_square
+    400040: MH_Wall_square1
+    400042: MH_Wall_top
+    400044: MH_Wall_top 1
+    400046: MH_Window001
+    400048: MH_Window003
+    400050: MH_Window004
+    400052: MH_Window005
+    400054: MH_Window2002
+    400056: MH_Woodstructure
+    400058: MH_Woodstructure_append
+    400060: MH_Woodstructure_square
+    400062: MH_Woodstructure_terrace
+    400064: MH_Woodstructure_top
+    400066: MH_Woodstructure_top 1
+    400068: polySurface1
+    400070: polySurface10
+    400072: polySurface11
+    400074: polySurface12
+    400076: polySurface13
+    400078: polySurface14
+    400080: polySurface15
+    400082: polySurface16
+    400084: polySurface17
+    400086: polySurface18
+    400088: polySurface19
+    400090: polySurface2
+    400092: polySurface3
+    400094: polySurface5
+    400096: polySurface6
+    400098: polySurface7
+    400100: polySurface8
+    400102: polySurface9
+    2100000: lambert1
+    2300000: MH_Basement_append
+    2300002: MH_Basement_square
+    2300004: MH_Chimney
+    2300006: MH_Door001
+    2300008: MH_Door002
+    2300010: MH_Roof_append
+    2300012: MH_Roof_terrace
+    2300014: MH_Roof_top
+    2300016: MH_Roof_top 1
+    2300018: MH_terrainstone
+    2300020: MH_Wall_append
+    2300022: MH_Wall_square
+    2300024: MH_Wall_square1
+    2300026: MH_Wall_top
+    2300028: MH_Wall_top 1
+    2300030: MH_Window001
+    2300032: MH_Window003
+    2300034: MH_Window004
+    2300036: MH_Window005
+    2300038: MH_Window2002
+    2300040: MH_Woodstructure
+    2300042: MH_Woodstructure_append
+    2300044: MH_Woodstructure_top
+    2300046: MH_Woodstructure_top 1
+    2300048: polySurface1
+    2300050: polySurface10
+    2300052: polySurface11
+    2300054: polySurface12
+    2300056: polySurface13
+    2300058: polySurface14
+    2300060: polySurface15
+    2300062: polySurface16
+    2300064: polySurface17
+    2300066: polySurface18
+    2300068: polySurface19
+    2300070: polySurface2
+    2300072: polySurface3
+    2300074: polySurface5
+    2300076: polySurface6
+    2300078: polySurface7
+    2300080: polySurface8
+    2300082: polySurface9
+    3300000: MH_Basement_append
+    3300002: MH_Basement_square
+    3300004: MH_Chimney
+    3300006: MH_Door001
+    3300008: MH_Door002
+    3300010: MH_Roof_append
+    3300012: MH_Roof_terrace
+    3300014: MH_Roof_top
+    3300016: MH_Roof_top 1
+    3300018: MH_terrainstone
+    3300020: MH_Wall_append
+    3300022: MH_Wall_square
+    3300024: MH_Wall_square1
+    3300026: MH_Wall_top
+    3300028: MH_Wall_top 1
+    3300030: MH_Window001
+    3300032: MH_Window003
+    3300034: MH_Window004
+    3300036: MH_Window005
+    3300038: MH_Window2002
+    3300040: MH_Woodstructure
+    3300042: MH_Woodstructure_append
+    3300044: MH_Woodstructure_top
+    3300046: MH_Woodstructure_top 1
+    3300048: polySurface1
+    3300050: polySurface10
+    3300052: polySurface11
+    3300054: polySurface12
+    3300056: polySurface13
+    3300058: polySurface14
+    3300060: polySurface15
+    3300062: polySurface16
+    3300064: polySurface17
+    3300066: polySurface18
+    3300068: polySurface19
+    3300070: polySurface2
+    3300072: polySurface3
+    3300074: polySurface5
+    3300076: polySurface6
+    3300078: polySurface7
+    3300080: polySurface8
+    3300082: polySurface9
+    4300000: MH_Door002
+    4300002: MH_Window2002
+    4300004: MH_Door001
+    4300006: MH_Window001
+    4300008: MH_Window003
+    4300010: MH_Window004
+    4300012: MH_Window005
+    4300014: polySurface1
+    4300016: polySurface2
+    4300018: polySurface3
+    4300020: MH_Wall_square
+    4300022: MH_Basement_square
+    4300024: MH_Wall_square1
+    4300026: MH_Basement_append
+    4300028: MH_Woodstructure_append
+    4300030: MH_Roof_append
+    4300032: MH_Wall_append
+    4300034: polySurface5
+    4300036: polySurface6
+    4300038: polySurface7
+    4300040: polySurface8
+    4300042: polySurface9
+    4300044: polySurface10
+    4300046: polySurface11
+    4300048: polySurface12
+    4300050: polySurface13
+    4300052: polySurface14
+    4300054: polySurface15
+    4300056: polySurface16
+    4300058: polySurface17
+    4300060: MH_Roof_terrace
+    4300062: polySurface18
+    4300064: polySurface19
+    4300066: MH_terrainstone
+    4300068: MH_Roof_top
+    4300070: MH_Wall_top
+    4300072: MH_Woodstructure_top
+    4300074: MH_Chimney
+    4300076: MH_Roof_top
+    4300078: MH_Wall_top
+    4300080: MH_Woodstructure_top
+    4300082: MH_Woodstructure
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

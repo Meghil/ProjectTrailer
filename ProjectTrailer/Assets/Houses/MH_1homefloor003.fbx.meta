@@ -1,0 +1,203 @@
+fileFormatVersion: 2
+guid: 972148c2fc4e2a347b1180b586f89254
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: MH_append
+    100004: MH_append1
+    100006: MH_Basement_append
+    100008: MH_Basement_append 1
+    100010: MH_Basement_square
+    100012: MH_Chimney
+    100014: MH_Door001
+    100016: MH_Fixtures
+    100018: MH_Roof_append
+    100020: MH_Roof_append 1
+    100022: MH_Roof_top
+    100024: MH_squarehouse
+    100026: MH_topsquare
+    100028: MH_Wall_append
+    100030: MH_Wall_append 1
+    100032: MH_Wall_square
+    100034: MH_Wall_top
+    100036: MH_Window001
+    100038: MH_Window007
+    100040: MH_Window2002
+    100042: MH_Woodstructure_append
+    100044: MH_Woodstructure_append 1
+    100046: MH_Woodstructure_square
+    100048: MH_Woodstructure_top
+    100050: polySurface1
+    100052: polySurface2
+    400000: //RootNode
+    400002: MH_append
+    400004: MH_append1
+    400006: MH_Basement_append
+    400008: MH_Basement_append 1
+    400010: MH_Basement_square
+    400012: MH_Chimney
+    400014: MH_Door001
+    400016: MH_Fixtures
+    400018: MH_Roof_append
+    400020: MH_Roof_append 1
+    400022: MH_Roof_top
+    400024: MH_squarehouse
+    400026: MH_topsquare
+    400028: MH_Wall_append
+    400030: MH_Wall_append 1
+    400032: MH_Wall_square
+    400034: MH_Wall_top
+    400036: MH_Window001
+    400038: MH_Window007
+    400040: MH_Window2002
+    400042: MH_Woodstructure_append
+    400044: MH_Woodstructure_append 1
+    400046: MH_Woodstructure_square
+    400048: MH_Woodstructure_top
+    400050: polySurface1
+    400052: polySurface2
+    2100000: lambert1
+    2300000: MH_Basement_append
+    2300002: MH_Basement_append 1
+    2300004: MH_Basement_square
+    2300006: MH_Chimney
+    2300008: MH_Door001
+    2300010: MH_Roof_append
+    2300012: MH_Roof_append 1
+    2300014: MH_Roof_top
+    2300016: MH_Wall_append
+    2300018: MH_Wall_append 1
+    2300020: MH_Wall_square
+    2300022: MH_Wall_top
+    2300024: MH_Window001
+    2300026: MH_Window007
+    2300028: MH_Window2002
+    2300030: MH_Woodstructure_append
+    2300032: MH_Woodstructure_append 1
+    2300034: MH_Woodstructure_top
+    2300036: polySurface1
+    2300038: polySurface2
+    3300000: MH_Basement_append
+    3300002: MH_Basement_append 1
+    3300004: MH_Basement_square
+    3300006: MH_Chimney
+    3300008: MH_Door001
+    3300010: MH_Roof_append
+    3300012: MH_Roof_append 1
+    3300014: MH_Roof_top
+    3300016: MH_Wall_append
+    3300018: MH_Wall_append 1
+    3300020: MH_Wall_square
+    3300022: MH_Wall_top
+    3300024: MH_Window001
+    3300026: MH_Window007
+    3300028: MH_Window2002
+    3300030: MH_Woodstructure_append
+    3300032: MH_Woodstructure_append 1
+    3300034: MH_Woodstructure_top
+    3300036: polySurface1
+    3300038: polySurface2
+    4300000: MH_Window2002
+    4300002: MH_Door001
+    4300004: MH_Window001
+    4300006: MH_Window007
+    4300008: polySurface1
+    4300010: polySurface2
+    4300012: MH_Wall_square
+    4300014: MH_Basement_square
+    4300016: MH_Basement_append
+    4300018: MH_Woodstructure_append
+    4300020: MH_Roof_append
+    4300022: MH_Wall_append
+    4300024: MH_Roof_top
+    4300026: MH_Wall_top
+    4300028: MH_Woodstructure_top
+    4300030: MH_Chimney
+    4300032: MH_Basement_append
+    4300034: MH_Woodstructure_append
+    4300036: MH_Roof_append
+    4300038: MH_Wall_append
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

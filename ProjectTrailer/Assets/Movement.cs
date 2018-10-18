@@ -11,6 +11,12 @@ public class Movement : MonoBehaviour
     public float horizontalVelocity;
     public float JumpForce;
     public float gravity;
+    public GameObject feet;
+    public GameObject RightHand;
+    public GameObject LeftHand;
+
+    private bool isAttacking;
+    
 
 	// Use this for initialization
 	void Start ()
@@ -22,23 +28,67 @@ public class Movement : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        float horizontal = Input.GetAxis("Horizontal");
-        animator.SetFloat("Move", horizontal);
-        animator.SetBool("IsJumping", controller.isGrounded);
-	    if(controller.isGrounded)
+        Attack();
+
+        if (animator.GetFloat("NextAttack") < 0.1)
         {
-            verticalVelocity -= gravity * Time.deltaTime;
-            if(Input.GetKeyDown(KeyCode.Space))
+            Debug.Log(Physics.Raycast(feet.transform.position, Vector3.down, 0.1f));
+            
+            float horizontal = Input.GetAxis("Horizontal");
+            animator.SetFloat("Move", horizontal);
+            if (horizontal > 0)
             {
-                verticalVelocity = JumpForce;
+                transform.forward = Vector3.right;
             }
+            else if (horizontal < 0)
+            {
+                transform.forward = -Vector3.right;
+            }
+
+
+            if (Physics.Raycast(feet.transform.position, Vector3.down, 0.1f))
+            {
+                verticalVelocity = 0;
+                animator.SetBool("IsJumping", false);
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    verticalVelocity = JumpForce;
+                    animator.SetBool("IsJumping", true);
+                }
+            }
+            else
+            {
+                verticalVelocity -= gravity * Time.deltaTime;
+
+            }
+            Vector3 moveVector = new Vector3(horizontal * horizontalVelocity * Time.deltaTime, verticalVelocity, 0);
+
+            controller.Move(moveVector * Time.deltaTime);
+
+        }
+
+        
+	}
+    
+    void Attack()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            animator.SetBool("Attack", true);
+            
+        }
+        if(animator.GetFloat("NextAttack") > 0.6)
+        {
+            RightHand.GetComponent<CapsuleCollider>().enabled = true;
+            LeftHand.GetComponent<CapsuleCollider>().enabled = true;
         }
         else
         {
-            verticalVelocity -= gravity * Time.deltaTime;
+            RightHand.GetComponent<CapsuleCollider>().enabled = false;
+            LeftHand.GetComponent<CapsuleCollider>().enabled = false;
         }
-        Vector3 moveVector = new Vector3(horizontal * horizontalVelocity * Time.deltaTime, verticalVelocity, 0);
 
-        controller.Move(moveVector * Time.deltaTime);
-	}
+    }
+
+    
 }
