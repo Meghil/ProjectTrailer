@@ -6,14 +6,14 @@ public class HeavyAttackComboState : StateMachineBehaviour {
     
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        animator.SetBool("Attack", false);
+        animator.SetBool("HeavyAttack", false);
     }
 
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
 	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         if (Input.GetMouseButtonDown(0) && animator.GetFloat("NextAttack") > 0.5)
         {
-            animator.SetBool("Attack", true);
+            animator.SetBool("HeavyAttack", true);
         }
 
     }

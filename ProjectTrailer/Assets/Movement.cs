@@ -14,6 +14,7 @@ public class Movement : MonoBehaviour
     public GameObject feet;
     public GameObject RightHand;
     public GameObject LeftHand;
+    RaycastHit hit;
 
     private bool isAttacking;
     
@@ -32,7 +33,7 @@ public class Movement : MonoBehaviour
 
         if (animator.GetFloat("NextAttack") < 0.1)
         {
-            Debug.Log(Physics.Raycast(feet.transform.position, Vector3.down, 0.1f));
+            Debug.DrawRay(feet.transform.position, Vector3.down, Color.red, 0.1f);
             
             float horizontal = Input.GetAxis("Horizontal");
             animator.SetFloat("Move", horizontal);
@@ -45,20 +46,25 @@ public class Movement : MonoBehaviour
                 transform.forward = -Vector3.right;
             }
 
-
-            if (Physics.Raycast(feet.transform.position, Vector3.down, 0.1f))
+            if (Physics.Raycast(feet.transform.position, Vector3.down, out hit, 0.15f))
             {
-                verticalVelocity = 0;
-                animator.SetBool("IsJumping", false);
-                if (Input.GetKeyDown(KeyCode.Space))
+                Debug.Log(hit.distance);
+                if (hit.collider.tag == "Terrain")
                 {
-                    verticalVelocity = JumpForce;
-                    animator.SetBool("IsJumping", true);
+                    verticalVelocity = 0;
+                    animator.SetBool("IsJumping", false);
+                    if (Input.GetKeyDown(KeyCode.Space))
+                    {
+                        verticalVelocity = JumpForce;
+                        animator.SetBool("IsJumping", true);
+                    }
                 }
             }
             else
             {
+                animator.SetBool("IsJumping", true);
                 verticalVelocity -= gravity * Time.deltaTime;
+                
 
             }
             Vector3 moveVector = new Vector3(horizontal * horizontalVelocity * Time.deltaTime, verticalVelocity, 0);
@@ -77,7 +83,12 @@ public class Movement : MonoBehaviour
             animator.SetBool("Attack", true);
             
         }
-        if(animator.GetFloat("NextAttack") > 0.6)
+        if (Input.GetMouseButtonDown(1))
+        {
+            animator.SetBool("HeavyAttack", true);
+
+        }
+        if (animator.GetFloat("NextAttack") > 0.6)
         {
             RightHand.GetComponent<CapsuleCollider>().enabled = true;
             LeftHand.GetComponent<CapsuleCollider>().enabled = true;
