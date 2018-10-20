@@ -14,9 +14,17 @@ public class Movement : MonoBehaviour
     public GameObject feet;
     public GameObject RightHand;
     public GameObject LeftHand;
+    public GameObject CheckGrab1;
+    public GameObject CheckGrab2;
+    public GameObject CheckGrab3;
     RaycastHit hit;
 
     private bool isAttacking;
+    private bool canGrab;
+
+    public bool IkActive;
+    public Transform IkRightHand;
+    public Transform IkLeftHand;
     
 
 	// Use this for initialization
@@ -63,7 +71,14 @@ public class Movement : MonoBehaviour
             else
             {
                 animator.SetBool("IsJumping", true);
-                verticalVelocity -= gravity * Time.deltaTime;
+                if (canGrab)
+                {
+                    verticalVelocity = 0;
+                }
+                else
+                {
+                    verticalVelocity -= gravity * Time.deltaTime;
+                }
                 
 
             }
@@ -71,6 +86,7 @@ public class Movement : MonoBehaviour
 
             controller.Move(moveVector * Time.deltaTime);
 
+            Grab();
         }
 
         
@@ -101,5 +117,62 @@ public class Movement : MonoBehaviour
 
     }
 
-    
+    void Grab()
+    {
+        RaycastHit grab1;
+        RaycastHit grab2;
+        RaycastHit grab3;
+
+        Debug.DrawRay(CheckGrab1.transform.position, transform.forward, Color.green, 0.5f);
+        Debug.DrawRay(CheckGrab2.transform.position, transform.forward, Color.green, 0.5f);
+        Debug.DrawRay(CheckGrab3.transform.position, transform.forward, Color.green, 0.5f);
+
+        if (!Physics.Raycast(CheckGrab1.transform.position, transform.forward, out grab1, 0.5f) && Physics.Raycast(CheckGrab2.transform.position, transform.forward, out grab2, 0.5f) && Physics.Raycast(CheckGrab3.transform.position, transform.forward, out grab3, 0.5f)) 
+        {
+
+            
+
+            Debug.Log(grab1.collider);
+            if (grab1.collider == null && grab2.collider.tag == "Terrain" && grab3.collider.tag == "Terrain")
+            {
+                canGrab = true;
+                IkActive = true;
+                IkLeftHand = grab2.collider.transform.Find("LeftHandGrab");
+                IkRightHand = grab2.collider.transform.Find("RightHandGrab");
+                animator.SetLayerWeight(0, 0);
+                animator.SetLayerWeight(1, 1);
+            }
+        }
+        else
+        {
+            canGrab = false;
+            IkActive = false;
+            animator.SetLayerWeight(0, 1);
+            animator.SetLayerWeight(1, 0);
+        }
+    }
+
+    private void OnAnimatorIK()
+    {
+        if(IkActive)
+        {
+            if(IkLeftHand != null)
+            {
+                animator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 1);
+                animator.SetIKPosition(AvatarIKGoal.LeftHand, IkLeftHand.position);
+            }
+            if(IkRightHand)
+            {
+                animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 1);
+                animator.SetIKPosition(AvatarIKGoal.RightHand, IkRightHand.position);
+            }
+        }
+        else
+        {
+            animator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 0);
+            animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 0);
+        }
+    }
+
+
 }
