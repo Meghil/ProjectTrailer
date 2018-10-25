@@ -61,7 +61,7 @@ public class Movement : MonoBehaviour
                 {
                     verticalVelocity = 0;
                     animator.SetBool("IsJumping", false);
-                    if (Input.GetKeyDown(KeyCode.Space))
+                    if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Jump"))
                     {
                         verticalVelocity = JumpForce;
                         animator.SetBool("IsJumping", true);
@@ -94,12 +94,12 @@ public class Movement : MonoBehaviour
     
     void Attack()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) || Input.GetButtonDown("LightAttack"))
         {
             animator.SetBool("Attack", true);
             
         }
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) || Input.GetButtonDown("HeavyAttack"))
         {
             animator.SetBool("HeavyAttack", true);
 
