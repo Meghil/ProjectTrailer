@@ -37,14 +37,18 @@ public class LevelManager : MonoBehaviour
        
     }
 
-    
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
-        
-        
+
+
         timer += Time.deltaTime;
 
+        if (timer >= 0.8f && !gameObject.GetComponent<AudioSource>().isPlaying)
+        {
+            this.gameObject.GetComponent<AudioSource>().Play();
+        }
         if (timer >= WaitingTime[listsCount])
         {
             Spawn(Position[listsCount], Buttons[listsCount]);
@@ -83,18 +87,23 @@ public class LevelManager : MonoBehaviour
             spawnObject = RightSpawnObject;
         }
 
+        newGo.AddComponent<ButtonMovement>();
+        newGo.GetComponent<ButtonMovement>().FinalPosition = FinalPosition.transform.position;
+        newGo.GetComponent<ButtonMovement>().velocity = Buttons[listsCount].Velocity;
+        newGo.GetComponent<ButtonMovement>().DestroyButton = Buttons[listsCount].buttonToPress;
+        newGo.GetComponent<ButtonMovement>().Durability = Buttons[listsCount].Durability;
+
+        
+
         newGo.GetComponent<RectTransform>().SetParent(canvas.transform);
         newGo.GetComponent<RectTransform>().anchoredPosition = spawnPosition;
         newGo.GetComponent<RectTransform>().anchorMax = spawnObject.GetComponent<RectTransform>().anchorMax;
         newGo.GetComponent<RectTransform>().anchorMin = spawnObject.GetComponent<RectTransform>().anchorMin;
-        newGo.AddComponent<ButtonMovement>();
-        newGo.AddComponent<BoxCollider>();
         
+        newGo.AddComponent<BoxCollider>();
         newGo.GetComponent<BoxCollider>().size = new Vector3(newGo.GetComponent<RectTransform>().sizeDelta.x, newGo.GetComponent<RectTransform>().sizeDelta.y, 2);
         newGo.GetComponent<BoxCollider>().isTrigger = true;
-        newGo.GetComponent<ButtonMovement>().FinalPosition = FinalPosition.transform.position;
-        newGo.GetComponent<ButtonMovement>().velocity = Buttons[listsCount].Velocity;
-        newGo.GetComponent<ButtonMovement>().DestroyButton = Buttons[listsCount].buttonToPress;
+        
         newGo.SetActive(true);
 
        

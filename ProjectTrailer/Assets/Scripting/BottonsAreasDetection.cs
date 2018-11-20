@@ -8,35 +8,56 @@ public class BottonsAreasDetection : MonoBehaviour
     public Text Points;
     private float points;
     public Queue<GameObject> NoteOrder;
+    public Queue<GameObject> LNoteOrder;
+    private float timer;
 
     // Use this for initialization
     void Start ()
     {
         NoteOrder = new Queue<GameObject>();
+        LNoteOrder = new Queue<GameObject>();
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        Debug.Log(NoteOrder.Peek().GetComponent<ButtonMovement>().DestroyButton);
-        if (Input.GetButtonDown(NoteOrder.Peek().GetComponent<ButtonMovement>().DestroyButton))
+        if (NoteOrder.Peek().GetComponent<ButtonMovement>().Durability > 0)
         {
-            Destroy(NoteOrder.Dequeue());
-            points += 100;
-            Points.text = points.ToString();
+            if (Input.GetButton(NoteOrder.Peek().GetComponent<ButtonMovement>().DestroyButton))
+            {
+                timer += Time.deltaTime;
+                if (timer >= NoteOrder.Peek().GetComponent<ButtonMovement>().Durability)
+                {
+                    Destroy(NoteOrder.Dequeue());
+                    points += 10000;
+                    Points.text = points.ToString();
+                }
+            }
+        }
+        else
+        { 
+            if (Input.GetButtonDown(NoteOrder.Peek().GetComponent<ButtonMovement>().DestroyButton))
+            {
+                Destroy(NoteOrder.Dequeue());
+                points += 100;
+                Points.text = points.ToString();
+            }
         }
         if (NoteOrder.Peek().GetComponent<ButtonMovement>().FinalPosition == NoteOrder.Peek().transform.position)
         {
-            Destroy(NoteOrder.Dequeue());
+            if (NoteOrder.Peek().GetComponent<ButtonMovement>().Durability <= 0)
+            {
+                Destroy(NoteOrder.Dequeue());
+            }
         }
     }
+
     private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log(other);
-        if (other.gameObject.GetComponent<ButtonMovement>())
-        {
-            NoteOrder.Enqueue(other.gameObject);         
-        }
-    }
-    
+   {
+       if (other.gameObject.GetComponent<ButtonMovement>())
+       {
+           this.GetComponentInParent<BottonsAreasDetection>().NoteOrder.Enqueue(other.gameObject);
+       }
+   }
+
 }

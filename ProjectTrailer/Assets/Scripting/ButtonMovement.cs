@@ -8,6 +8,7 @@ public class ButtonMovement : MonoBehaviour
     public Vector3 FinalPosition;
     public string DestroyButton;
     public float velocity;
+    public float Durability;
     Camera usedCamera;
     Ray ray;
 

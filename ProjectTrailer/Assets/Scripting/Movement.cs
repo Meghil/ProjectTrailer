@@ -74,6 +74,7 @@ public class Movement : MonoBehaviour
                 if (canGrab)
                 {
                     verticalVelocity = 0;
+                    animator.SetBool("IsGrab", true);
                 }
                 else
                 {
@@ -129,10 +130,6 @@ public class Movement : MonoBehaviour
 
         if (!Physics.Raycast(CheckGrab1.transform.position, transform.forward, out grab1, 0.5f) && Physics.Raycast(CheckGrab2.transform.position, transform.forward, out grab2, 0.5f) && Physics.Raycast(CheckGrab3.transform.position, transform.forward, out grab3, 0.5f)) 
         {
-
-            
-
-            Debug.Log(grab1.collider);
             if (grab1.collider == null && grab2.collider.tag == "Terrain" && grab3.collider.tag == "Terrain")
             {
                 canGrab = true;
@@ -149,6 +146,16 @@ public class Movement : MonoBehaviour
             IkActive = false;
             animator.SetLayerWeight(0, 1);
             animator.SetLayerWeight(1, 0);
+        }
+    }
+
+    void Rise()
+    {
+        RaycastHit distanceFromFloor;
+
+        if(animator.GetBool("Rise") == true)
+        {
+
         }
     }
 

@@ -9,11 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b15b461f37bd8941beb48532a08a829, type: 3}
-  m_Name: Square
+  m_Name: XLungo
   m_EditorClassIdentifier: 
-  Velocity: 0.5
-  SpawnPoint: Left
-  Image: {fileID: 21300000, guid: 5906e8d88f881fc428b49ffb57c20ecd, type: 3}
-  Durability: 0
+  Velocity: 0.7
+  SpawnPoint: 
+  Image: {fileID: 21300000, guid: 275d15e0ba5f9294d806c48974673210, type: 3}
+  Durability: 3
   TimeToSpawn: 2
-  buttonToPress: Square
+  buttonToPress: X
