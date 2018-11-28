@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a8eb5289b95be3248a024c288a0620ef
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _houses_normal: {fileID: 2800000, guid: 32f8fa55f2b5dca4eb5752915ec61ab8, type: 3}
+  - _houses_diffuse: {fileID: 2800000, guid: 099940a5bac01b448bf7e59d2d7cedf0, type: 3}
+  - _houses_metallic: {fileID: 2800000, guid: 7fcc4b96fd10fc74c82ac65a809aa69b, type: 3}
+  - _houses_roughness: {fileID: 2800000, guid: 35f141e6851b9ec4db8e86910d3722c9, type: 3}
+  - _houses_ao: {fileID: 2800000, guid: 193b12739566f07479bb54d661eceaa4, type: 3}
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

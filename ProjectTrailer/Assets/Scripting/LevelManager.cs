@@ -7,6 +7,8 @@ public class LevelManager : MonoBehaviour
 {
     public float speed;
 
+    public float MusicStart;
+
     public List<string> Position;
     public List<Button> Buttons;
     public List<float> WaitingTime;
@@ -44,8 +46,9 @@ public class LevelManager : MonoBehaviour
 
 
         timer += Time.deltaTime;
+        MusicStart -= Time.deltaTime;
 
-        if (timer >= 0.8f && !gameObject.GetComponent<AudioSource>().isPlaying)
+        if (MusicStart <= 0 && !gameObject.GetComponent<AudioSource>().isPlaying)
         {
             this.gameObject.GetComponent<AudioSource>().Play();
         }
